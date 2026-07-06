@@ -46,3 +46,5 @@ venv/
 .npm/
 .pnpm-store/
 .yarn/cache/
+.agents/
+
