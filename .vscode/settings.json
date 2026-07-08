@@ -1,0 +1,23 @@
+{
+    // ─── 编码 ───
+    "files.encoding": "utf8",
+
+    // ─── 终端（确保 cmd.exe 以 UTF-8 启动，避免中文乱码） ───
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": ["/k", "chcp 65001 >nul"]
+        }
+    },
+
+    // ─── Code Runner ───
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++17 -g -finput-charset=UTF-8 -fexec-charset=UTF-8 $fileName -o $fileNameWithoutExt.exe && .\\$fileNameWithoutExt.exe"
+    }
+}
